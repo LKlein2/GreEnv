@@ -6,27 +6,25 @@
 
 <h2>GreEnv</h2>
 <h6>Você sabe quanta energia está sendo gasta em sua casa nesse exato momento? Simule!</h6>
-
-<form class="row" method="post">
-    <div class="input-group col-md-4">
-        <div class="col-md-7">
-            <select class="form-control">
-                @foreach (var equipamentos in Model.Equipamentos)
-                {
-                    <option value=@equipamentos.Id>@equipamentos.Nome</option>
-                }
-            </select>
-        </div>
-        <div class="col-md-4">
-            <input asp-for="EquipamentoCasa.Quantidade" class="form-control" value="" placeholder="Quantidade">
-        </div>
-        <div class="col-md-1">
-            <button type="submit" class="btn btn-primary">Incluir</button>
-        </div>
-    </div>
-</form>
-
 <div>
+    <form class="row" method="post">
+        <div class="input-group col-md-6">
+            <div class="col-md-7">
+                <select asp-for="EquipamentoId"
+                        asp-items="@(new SelectList(Model.Equipamentos,"Id","Nome"))">
+                </select>
+            </div>
+            <div class="col-md-3">
+                <input asp-for="EquipamentoCasa.Quantidade" class="form-control" value="" placeholder="Quantidade">
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary">Incluir</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="margin-teste">
     <table class="table">
         <thead>
             <tr class="bg-info">

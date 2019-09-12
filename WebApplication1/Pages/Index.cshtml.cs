@@ -17,6 +17,7 @@ namespace WebApplication1.Pages
         public Casa Casa { get; set; }
         public IEnumerable<Equipamento> Equipamentos { get; set; }
         public EquipamentoCasa EquipamentoCasa { get; set; }
+        public int EquipamentoId { get; set; }
 
         public IndexModel(ICasaData casaData,
                           IEquipamentoData equipamentoData)
@@ -25,10 +26,17 @@ namespace WebApplication1.Pages
             this.equipamentoData = equipamentoData;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
             Equipamentos = equipamentoData.GetAll();
             Casa = casaData.GetById(1);
+            return Page();
+        }
+
+        public IActionResult OnPost()
+        {
+            EquipamentoCasa.Equipamento = equipamentoData.GetById(EquipamentoId);
+            return Page();
         }
     }
 }

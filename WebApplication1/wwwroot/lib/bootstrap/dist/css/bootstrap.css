@@ -6602,6 +6602,10 @@ button.close {
 .hide {
   display: none !important;
 }
+.margin-teste {
+    margin-top: 15px;
+}
+
 .show {
   display: block !important;
 }
