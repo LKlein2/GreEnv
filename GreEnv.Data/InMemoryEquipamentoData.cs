@@ -1,7 +1,7 @@
 ﻿namespace GreEnv.Data
 {
-    public class InMemoryEquipamentoData : IEquipamentoData
-    {
+    //public class InMemoryEquipamentoData : IEquipamentoData
+    //{
 
-    }
+    //}
 }

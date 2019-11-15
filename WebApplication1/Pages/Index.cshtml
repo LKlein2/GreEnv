@@ -11,7 +11,7 @@
         <div class="input-group col-md-6">
             <div class="col-md-7">
                 <select asp-for="EquipamentoId"
-                        asp-items="@(new SelectList(Model.Equipamentos,"Id","Nome"))">
+                        asp-items="@(new SelectList(Model.Equipamentos,"Id","Nome"))"  class="form-control">
                 </select>
             </div>
             <div class="col-md-3">
