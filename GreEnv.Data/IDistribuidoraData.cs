@@ -6,9 +6,10 @@ using System.Text;
 
 namespace GreEnv.Data
 {
-    interface IDistribuidoraData
+    public interface IDistribuidoraData
     {
         Distribuidora GetById(int id);
+        List<Distribuidora> GetAll();
     }
 
     public class InMemoryDistribuidoraData : IDistribuidoraData
@@ -28,6 +29,12 @@ namespace GreEnv.Data
         public Distribuidora GetById(int id)
         {
             return Distribuidoras.Where(d => d.Id == id).FirstOrDefault();
+        }
+
+
+        public List<Distribuidora> GetAll()
+        {
+            return Distribuidoras;
         }
     }
 

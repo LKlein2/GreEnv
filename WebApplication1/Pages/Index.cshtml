@@ -8,14 +8,16 @@
 <h6>Você sabe quanta energia está sendo gasta em sua casa nesse exato momento? Simule!</h6>
 <div>
     <form class="row" method="post">
-        <div class="input-group col-md-6">
-            <div class="col-md-7">
+        <div class="input-group col-md-7">
+            <div class="col-md-6">
                 <select asp-for="EquipamentoId"
-                        asp-items="@(new SelectList(Model.Equipamentos,"Id","Nome"))"  class="form-control">
-                </select>
+                        asp-items="@(new SelectList(Model.Equipamentos,"Id","Nome"))" class="form-control"></select>
             </div>
             <div class="col-md-3">
                 <input asp-for="EquipamentoCasa.Quantidade" class="form-control" value="" placeholder="Quantidade">
+            </div>
+            <div class="col-md-2">
+                <input asp-for="EquipamentoCasa.HorasLigado" class="form-control" value="" placeholder="Horas">
             </div>
             <div class="col-md-1">
                 <button type="submit" class="btn btn-primary">Incluir</button>
@@ -48,4 +50,15 @@
             </tbody>
         }
     </table>
+    <div class="input-group col-md-4">
+        <div class="col-md-6">
+            <select asp-for="DistribuidoraId"
+                    asp-items="@(new SelectList(Model.Distribuidoras,"Id","Nome"))" class="form-control"></select>
+        </div>
+        <div class="col-md-6">
+            <form method="POST">
+                <button type="submit" class="btn btn-primary" asp-page-handler="Calculate">Calcular</button>
+            </form>
+        </div>
+    </div>
 </div>

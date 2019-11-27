@@ -27,6 +27,7 @@ namespace WebApplication1
         {
             services.AddSingleton<ICasaData, InMemoryCasaData>();
             services.AddSingleton<IEquipamentoData, InMemoryEquipamentoData>();
+            services.AddSingleton<IDistribuidoraData, InMemoryDistribuidoraData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
